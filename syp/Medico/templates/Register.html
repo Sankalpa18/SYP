@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'Login.css' %}">
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-container">
+            <img src="/images/logo.png" alt="company logo">
+        </div>
+        <div class="form-container">
+            <form class="Form" action="" method="POST">
+                {% csrf_token %}
+                <input type="email" placeholder="E-Mail" name="gmail">
+                <input type="password" placeholder="password" name="password">
+                <input type="password" placeholder="Confirm password" name="confirm">
+                <a href="{% url "login" %}" class="forget">Log in to your account ?</a>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
